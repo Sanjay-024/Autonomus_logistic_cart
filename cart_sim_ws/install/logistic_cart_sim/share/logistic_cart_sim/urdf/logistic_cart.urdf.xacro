@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+
+<robot name="logistic_cart">
+
+<!-- ================= BASE ================= -->
+
+<link name="base_link">
+
+  <visual>
+    <geometry>
+      <box size="0.5 0.4 0.15"/>
+    </geometry>
+
+    <material name="blue">
+      <color rgba="0 0 1 1"/>
+    </material>
+  </visual>
+
+  <collision>
+    <geometry>
+      <box size="0.5 0.4 0.15"/>
+    </geometry>
+  </collision>
+
+  <inertial>
+    <mass value="10"/>
+    <origin xyz="0 0 0"/>
+    <inertia ixx="0.3" iyy="0.3" izz="0.3"
+             ixy="0" ixz="0" iyz="0"/>
+  </inertial>
+
+</link>
+
+
+<!-- ================= LEFT WHEEL ================= -->
+
+<link name="left_wheel">
+
+  <visual>
+    <origin rpy="1.5708 0 0"/>
+    <geometry>
+      <cylinder radius="0.06" length="0.03"/>
+    </geometry>
+  </visual>
+
+  <collision>
+    <origin rpy="1.5708 0 0"/>
+    <geometry>
+      <cylinder radius="0.06" length="0.03"/>
+    </geometry>
+  </collision>
+
+  <inertial>
+    <mass value="1"/>
+    <inertia ixx="0.01" iyy="0.01" izz="0.01"
+             ixy="0" ixz="0" iyz="0"/>
+  </inertial>
+
+</link>
+
+
+<!-- ================= RIGHT WHEEL ================= -->
+
+<link name="right_wheel">
+
+  <visual>
+    <origin rpy="1.5708 0 0"/>
+    <geometry>
+      <cylinder radius="0.06" length="0.03"/>
+    </geometry>
+  </visual>
+
+  <collision>
+    <origin rpy="1.5708 0 0"/>
+    <geometry>
+      <cylinder radius="0.06" length="0.03"/>
+    </geometry>
+  </collision>
+
+  <inertial>
+    <mass value="1"/>
+    <inertia ixx="0.01" iyy="0.01" izz="0.01"
+             ixy="0" ixz="0" iyz="0"/>
+  </inertial>
+
+</link>
+
+
+<!-- ================= LEFT WHEEL JOINT ================= -->
+
+<joint name="left_wheel_joint" type="continuous">
+
+  <parent link="base_link"/>
+  <child link="left_wheel"/>
+
+  <origin xyz="0 0.2 -0.05"/>
+  <axis xyz="0 1 0"/>
+
+</joint>
+
+
+<!-- ================= RIGHT WHEEL JOINT ================= -->
+
+<joint name="right_wheel_joint" type="continuous">
+
+  <parent link="base_link"/>
+  <child link="right_wheel"/>
+
+  <origin xyz="0 -0.2 -0.05"/>
+  <axis xyz="0 1 0"/>
+
+</joint>
+
+
+<!-- ================= LIDAR SENSOR ================= -->
+
+<link name="lidar_link">
+
+  <visual>
+    <geometry>
+      <cylinder radius="0.05" length="0.05"/>
+    </geometry>
+
+    <material name="black">
+      <color rgba="0 0 0 1"/>
+    </material>
+
+  </visual>
+
+  <collision>
+    <geometry>
+      <cylinder radius="0.05" length="0.05"/>
+    </geometry>
+  </collision>
+
+  <inertial>
+    <mass value="0.2"/>
+    <inertia ixx="0.001" iyy="0.001" izz="0.001"
+             ixy="0" ixz="0" iyz="0"/>
+  </inertial>
+
+</link>
+
+
+<!-- LIDAR JOINT -->
+
+<joint name="lidar_joint" type="fixed">
+
+  <parent link="base_link"/>
+  <child link="lidar_link"/>
+
+  <origin xyz="0 0 0.15"/>
+
+</joint>
+
+
+<!-- ================= DIFF DRIVE PLUGIN ================= -->
+
+<gazebo>
+
+  <plugin filename="libgz-sim-diff-drive-system.so"
+          name="gz::sim::systems::DiffDrive">
+
+    <left_joint>left_wheel_joint</left_joint>
+    <right_joint>right_wheel_joint</right_joint>
+
+    <wheel_separation>0.40</wheel_separation>
+    <wheel_radius>0.06</wheel_radius>
+
+    <topic>/cmd_vel</topic>
+
+  </plugin>
+
+</gazebo>
+
+
+<!-- ================= LIDAR GAZEBO PLUGIN ================= -->
+
+<gazebo reference="lidar_link">
+
+  <sensor name="lidar_sensor" type="gpu_lidar">
+
+    <update_rate>10</update_rate>
+
+    <lidar>
+
+      <scan>
+
+        <horizontal>
+
+          <samples>720</samples>
+          <resolution>1</resolution>
+          <min_angle>-3.14159</min_angle>
+          <max_angle>3.14159</max_angle>
+
+        </horizontal>
+
+      </scan>
+
+      <range>
+
+        <min>0.12</min>
+        <max>10</max>
+        <resolution>0.01</resolution>
+
+      </range>
+
+    </lidar>
+
+    <topic>/scan</topic>
+
+  </sensor>
+
+</gazebo>
+
+
+</robot>

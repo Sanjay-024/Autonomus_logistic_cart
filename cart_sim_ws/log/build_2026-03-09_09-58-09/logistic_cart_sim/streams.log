@@ -1,0 +1,19 @@
+[0.880s] Invoking command in '/home/sanjay/cart_sim_ws/src/logistic_cart_sim': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/sanjay/cart_sim_ws/build/logistic_cart_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sanjay/cart_sim_ws/install/logistic_cart_sim/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/logistic_cart_sim build --build-base /home/sanjay/cart_sim_ws/build/logistic_cart_sim/build install --record /home/sanjay/cart_sim_ws/build/logistic_cart_sim/install.log --single-version-externally-managed install_data
+[1.200s] running egg_info
+[1.220s] writing ../../build/logistic_cart_sim/logistic_cart_sim.egg-info/PKG-INFO
+[1.220s] writing dependency_links to ../../build/logistic_cart_sim/logistic_cart_sim.egg-info/dependency_links.txt
+[1.220s] writing requirements to ../../build/logistic_cart_sim/logistic_cart_sim.egg-info/requires.txt
+[1.220s] writing top-level names to ../../build/logistic_cart_sim/logistic_cart_sim.egg-info/top_level.txt
+[1.261s] reading manifest file '../../build/logistic_cart_sim/logistic_cart_sim.egg-info/SOURCES.txt'
+[1.262s] writing manifest file '../../build/logistic_cart_sim/logistic_cart_sim.egg-info/SOURCES.txt'
+[1.262s] running build
+[1.262s] running build_py
+[1.262s] running install
+[1.270s] running install_lib
+[1.290s] running install_data
+[1.290s] running install_egg_info
+[1.312s] removing '/home/sanjay/cart_sim_ws/install/logistic_cart_sim/lib/python3.12/site-packages/logistic_cart_sim-0.0.0-py3.12.egg-info' (and everything under it)
+[1.313s] Copying ../../build/logistic_cart_sim/logistic_cart_sim.egg-info to /home/sanjay/cart_sim_ws/install/logistic_cart_sim/lib/python3.12/site-packages/logistic_cart_sim-0.0.0-py3.12.egg-info
+[1.313s] running install_scripts
+[1.453s] writing list of installed files to '/home/sanjay/cart_sim_ws/build/logistic_cart_sim/install.log'
+[1.485s] Invoked command in '/home/sanjay/cart_sim_ws/src/logistic_cart_sim' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/sanjay/cart_sim_ws/build/logistic_cart_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sanjay/cart_sim_ws/install/logistic_cart_sim/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/logistic_cart_sim build --build-base /home/sanjay/cart_sim_ws/build/logistic_cart_sim/build install --record /home/sanjay/cart_sim_ws/build/logistic_cart_sim/install.log --single-version-externally-managed install_data

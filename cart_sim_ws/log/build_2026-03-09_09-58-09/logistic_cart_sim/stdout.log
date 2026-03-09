@@ -1,0 +1,17 @@
+running egg_info
+writing ../../build/logistic_cart_sim/logistic_cart_sim.egg-info/PKG-INFO
+writing dependency_links to ../../build/logistic_cart_sim/logistic_cart_sim.egg-info/dependency_links.txt
+writing requirements to ../../build/logistic_cart_sim/logistic_cart_sim.egg-info/requires.txt
+writing top-level names to ../../build/logistic_cart_sim/logistic_cart_sim.egg-info/top_level.txt
+reading manifest file '../../build/logistic_cart_sim/logistic_cart_sim.egg-info/SOURCES.txt'
+writing manifest file '../../build/logistic_cart_sim/logistic_cart_sim.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/sanjay/cart_sim_ws/install/logistic_cart_sim/lib/python3.12/site-packages/logistic_cart_sim-0.0.0-py3.12.egg-info' (and everything under it)
+Copying ../../build/logistic_cart_sim/logistic_cart_sim.egg-info to /home/sanjay/cart_sim_ws/install/logistic_cart_sim/lib/python3.12/site-packages/logistic_cart_sim-0.0.0-py3.12.egg-info
+running install_scripts
+writing list of installed files to '/home/sanjay/cart_sim_ws/build/logistic_cart_sim/install.log'
